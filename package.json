@@ -3,7 +3,7 @@
     "displayName": "go-home",
     "publisher": "go-home",
     "description": "下班提醒小助手",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "engines": {
         "vscode": "^1.36.0"
     },
@@ -22,13 +22,13 @@
             "properties": {
                 "gohome.hour": {
                     "scope": "window",
-                    "type": "string",
+                    "type": "number",
                     "description": "下班时间, 小时(24小时制)",
                     "default": 18
                 },
                 "gohome.minute": {
                     "scope": "window",
-                    "type": "string",
+                    "type": "number",
                     "description": "下班时间, 分钟",
                     "default": 0
                 }
