@@ -15,7 +15,7 @@ function getMessage() {
     goHome.setMinutes(config.minute);
     goHome.setSeconds(0);
     
-	const duration = goHome.getTime() - now.getTime() + 1000 * 60 * 34;
+	const duration = goHome.getTime() - now.getTime();
     if (duration <= 0) {
         return GetOffMessage;
     }
