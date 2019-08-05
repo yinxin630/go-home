@@ -54,6 +54,6 @@
         "vscode-test": "^1.0.2"
     },
     "dependencies": {
-        "deepcopy": "^2.0.0"
+
     }
 }
