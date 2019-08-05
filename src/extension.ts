@@ -1,4 +1,8 @@
 import * as vscode from 'vscode';
+import * as deepcopy from 'deepcopy';
+
+const allConfig = vscode.workspace.getConfiguration();
+const config = allConfig.gohome;
 
 const GetOffMessage = '已经下班啦~ 赶紧滚回家去';
 const NotificationMessage = '到点啦~ 该下班了!';
@@ -7,8 +11,8 @@ const NotificationMessage = '到点啦~ 该下班了!';
 function getMessage() {
     const now = new Date();
     const goHome = new Date();
-    goHome.setHours(18);
-    goHome.setMinutes(0);
+    goHome.setHours(config.hour);
+    goHome.setMinutes(config.minute);
     goHome.setSeconds(0);
     
 	const duration = goHome.getTime() - now.getTime() + 1000 * 60 * 34;

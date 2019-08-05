@@ -1,38 +1,59 @@
 {
-	"name": "go-home",
-	"displayName": "go-home",
-	"publisher": "go-home",
-	"description": "下班提醒小助手",
-	"version": "1.0.0",
-	"engines": {
-		"vscode": "^1.36.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"*"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": []
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^5.2.6",
-		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.36.0",
-		"glob": "^7.1.4",
-		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
-		"tslint": "^5.12.1",
-		"vscode-test": "^1.0.2"
-	}
+    "name": "go-home",
+    "displayName": "go-home",
+    "publisher": "go-home",
+    "description": "下班提醒小助手",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.36.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [],
+        "configuration": {
+            "type": "object",
+            "title": "GoHome",
+            "properties": {
+                "gohome.hour": {
+                    "scope": "window",
+                    "type": "string",
+                    "description": "下班时间, 小时(24小时制)",
+                    "default": 18
+                },
+                "gohome.minute": {
+                    "scope": "window",
+                    "type": "string",
+                    "description": "下班时间, 分钟",
+                    "default": 0
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "yarn run compile",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.6",
+        "@types/node": "^10.12.21",
+        "@types/vscode": "^1.36.0",
+        "glob": "^7.1.4",
+        "mocha": "^6.1.4",
+        "typescript": "^3.3.1",
+        "tslint": "^5.12.1",
+        "vscode-test": "^1.0.2"
+    },
+    "dependencies": {
+        "deepcopy": "^2.0.0"
+    }
 }
