@@ -3,7 +3,7 @@
     "displayName": "go-home",
     "publisher": "go-home",
     "description": "下班提醒小助手",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "engines": {
         "vscode": "^1.36.0"
     },
